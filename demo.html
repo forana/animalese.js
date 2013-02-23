@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="animalese.js"></script>
+	</head>
+	<body onload="Animalese.load('sounds','ogg');">
+		<form onsubmit="Animalese.say(this.string.value); return false;">
+			<input id="text" type="text" name="string" placeholder="What do I say?"/>
+			<button type="submit">Say</button>
+		</form>
+		<script>
+			document.body.addEventListener("keypress", function (e) {
+				Animalese.utter(String.fromCharCode(e.which));
+			});
+		</script>
+	</body>
+</html>
